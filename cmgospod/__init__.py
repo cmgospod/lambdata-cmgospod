@@ -7,3 +7,7 @@ import numpy as np
 
 ONES = pd.DataFrame(np.ones(10))
 ZEROS = pd.DataFrame(np.zeros(10))
+
+def conc(lst, frame):
+    ser = pd.Series(lst)
+    return pd.concat([frame, ser], axis=1)
