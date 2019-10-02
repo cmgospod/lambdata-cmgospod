@@ -21,3 +21,14 @@ def timesplitter(frame, colname, remove=False):
     if remove:
       del frame[colname]
     return frame
+
+class Conc():
+    def __init__(self, frame, dictoflists):
+      self.frame = frame
+      self.dictoflists = dictoflists
+
+    def serializer(self):
+      for key in self.dictoflists:
+        ser = pd.Series(self.dictoflists[key], name=key)
+        df2 = pd.concat([self.frame, ser], axis=1)
+      return df2
