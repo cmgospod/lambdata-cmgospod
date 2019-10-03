@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
     setuptools.setup(
     name="mgospod",
-    version = "0.1.11",
+    version = "0.1.12",
     author = "cmgospod",
     description = "a collection of data science helper functions",
     long_description = LONG_DESCRIPTION,

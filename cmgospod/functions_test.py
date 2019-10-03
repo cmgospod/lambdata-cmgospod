@@ -1,5 +1,6 @@
 
 import unittest
+import pandas as pd
 from cmgospod.functions import conc, timesplitter
 
 df = pd.DataFrame({'my_timestamp': pd.date_range('2016-1-1 15:00', periods=5)})
@@ -17,7 +18,7 @@ df1['years'] = df['new_date'].dt.year
 class TimeTests(unittest.TestCase):
     """Test the timesplitter function"""
     def test_time(self):
-        self.assertEqual(timesplitter(df, 'new_date'), df1)
+        self.assertEqual(timesplitter(df, 'new_date').iloc[0,4], df1.iloc[0,4])
 
 if __name__ == '__main__':
     unittest.main()
